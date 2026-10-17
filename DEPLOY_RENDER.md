@@ -6,7 +6,7 @@ The website needs only GitHub and Render. No database, API key, payment account,
 
 The repository includes a root-level `render.yaml`. In Render, choose **New → Blueprint**, connect this GitHub repository, and keep the Blueprint path as `render.yaml`. Render will create a Node web service, run the production build, start Next.js on the provided port, health-check `/`, and redeploy on each commit to the linked branch.
 
-The Blueprint sets `SITE_URL` to the temporary Render domain and keeps `SITE_INDEXABLE=false` for a safe pre-launch deployment.
+The Blueprint sets `SITE_URL` to the temporary Render domain and keeps `SITE_INDEXABLE=false` for a safe pre-launch deployment. The compute `plan` is intentionally omitted so Blueprint syncs preserve the paid tier selected in the Render dashboard instead of reverting it to Free.
 
 ## Manual GitHub to Render
 

@@ -2,7 +2,8 @@ services:
   - type: web
     name: southern-grace-interiors
     runtime: node
-    plan: free
+    # Intentionally omitted: Render preserves the paid compute plan selected
+    # in the dashboard instead of forcing a Blueprint plan change.
     buildCommand: npm ci && npm run build
     startCommand: npm run start
     healthCheckPath: /
