@@ -1,0 +1,16 @@
+import type { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
+import { services } from "@/app/data/site";
+
+export const metadata: Metadata = { title: "Interior Design Services", description: "Thoughtful interior design services shaped around how you live and what you love." };
+
+export default function DesignServicesPage() {
+  return <>
+    <section className="split-hero services-hero"><div><p className="eyebrow">The Design Studio</p><h1>A home with<br /><em>your story in it.</em></h1><p>Thoughtful interiors shaped around the way you live, the things you love, and the feeling you want to come home to.</p><Link href="/contact" className="button button-dark">Begin a Conversation</Link></div><div><Image src="/images/dining-classic.jpg" alt="Warm, layered dining room interior" fill priority sizes="(max-width: 850px) 100vw, 52vw" /></div></section>
+    <section className="services-intro section-shell"><p className="section-index">DESIGN WITH INTENTION</p><div><p className="eyebrow">Our Approach</p><h2>Refined, but never<br /><em>removed from real life.</em></h2></div><div><p>The best homes feel effortless because every decision has been considered: how a room moves, where the light falls, what invites you to sit, and which details make it yours.</p><p>Our role is to bring clarity to those decisions and shape them into a home with warmth, character, and enduring ease.</p></div></section>
+    <section className="service-list section-shell">{services.map((service, index) => <article key={service.slug}><span>0{index + 1}</span><div><h2>{service.title}</h2><p>{service.description}</p></div><ul>{service.includes.map((item) => <li key={item}>{item}</li>)}</ul><Link href="/contact" aria-label={`Inquire about ${service.title}`}>Inquire <b>↗</b></Link></article>)}</section>
+    <section className="process-section"><div className="section-shell"><div className="section-heading"><div><p className="eyebrow">The Process</p><h2>From first thought<br /><em>to feeling at home.</em></h2></div><p>A clear, collaborative journey with room for discovery—and no mystery about what comes next.</p></div><div className="process-grid"><article><span>01</span><h3>Discover</h3><p>We listen closely, walk through your needs, and define what a beautiful outcome means for you.</p></article><article><span>02</span><h3>Design</h3><p>Layouts, materials, furnishings, and details are developed into one cohesive visual story.</p></article><article><span>03</span><h3>Refine</h3><p>Together, we shape and edit the direction until every choice feels confident and connected.</p></article><article><span>04</span><h3>Complete</h3><p>The final layers come together, transforming thoughtful plans into a home ready to be lived in.</p></article></div></div></section>
+    <section className="service-cta section-shell"><div><Image src="/images/bedroom-serene.jpg" alt="Serene bedroom in layered neutral tones" fill sizes="(max-width: 800px) 100vw, 45vw" /></div><article><p className="eyebrow">Your Home, Considered</p><h2>Every beautiful room<br /><em>begins with a conversation.</em></h2><p>Share what you are imagining, what is not working, and how you want your home to feel. We will begin there.</p><Link href="/contact" className="button button-dark">Tell Us About Your Project</Link></article></section>
+  </>;
+}
