@@ -37,5 +37,6 @@ test("production image delivery stays within the Render memory budget", async ()
   ]);
   assert.match(nextConfig, /unoptimized: true/);
   assert.doesNotMatch(nextConfig, /image\/avif/);
+  assert.match(nextConfig, /max-age=604800/);
   assert.match(renderConfig, /--max-old-space-size=256/);
 });

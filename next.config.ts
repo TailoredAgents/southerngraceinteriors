@@ -8,6 +8,15 @@ const nextConfig: NextConfig = {
     // 512 MB instance while preserving lazy loading and layout stability.
     unoptimized: true,
   },
+  async headers() {
+    const imageCache = [
+      { key: "Cache-Control", value: "public, max-age=604800, stale-while-revalidate=2592000" },
+    ];
+    return [
+      { source: "/images/:path*", headers: imageCache },
+      { source: "/og.png", headers: imageCache },
+    ];
+  },
 };
 
 export default nextConfig;
