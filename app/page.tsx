@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <>
       <section className="home-hero">
-        <Image src="/images/hero-living.jpg" alt="Layered neutral living room with warm wood and tailored seating" fill priority sizes="100vw" />
+        <Image src="/images/home-hero-v2.webp" alt="Sunlit living room layered with linen, warm wood, and quiet green accents" fill priority sizes="100vw" />
         <div className="hero-shade" />
         <div className="hero-copy reveal">
           <p className="eyebrow">Southern Grace Interiors</p>
@@ -51,9 +51,9 @@ export default function Home() {
 
       <section className="story-section"><div className="story-inner section-shell"><div><p className="eyebrow">Southern Grace</p><h2>Beauty with warmth.<br />Elegance with <em>ease.</em></h2></div><div><p>Southern Grace Interiors is built on a simple belief: the most beautiful rooms are the ones that make life feel better.</p><p>Our point of view honors enduring materials, gracious proportions, and the small details that turn a house into somewhere you belong.</p><Link className="text-link light" href="/about">Our story <span>→</span></Link></div></div></section>
 
-      <section className="journal-home section-shell"><div className="section-heading centered"><div><p className="eyebrow">From the Journal</p><h2>Notes on<br /><em>living beautifully.</em></h2></div><Link href="/journal" className="text-link">Read all stories <span>→</span></Link></div><div className="journal-grid">{journal.slice(0, 3).map((entry, index) => <Link href={`/journal/${entry.slug}`} key={entry.slug} className="journal-card"><div><Image src={entry.image} alt="" fill sizes="(max-width: 700px) 100vw, 33vw" /></div><p>{entry.category} · 0{index + 1}</p><h3>{entry.title}</h3><span>Read the story →</span></Link>)}</div></section>
+      <section className="journal-home section-shell"><div className="section-heading centered"><div><p className="eyebrow">From the Journal</p><h2>Notes on<br /><em>living beautifully.</em></h2></div><Link href="/journal" className="text-link">Read all stories <span>→</span></Link></div><div className="journal-grid">{journal.slice(0, 3).map((entry, index) => <Link href={`/journal/${entry.slug}`} key={entry.slug} className="journal-card"><div><Image src={entry.image} alt="" fill loading="eager" sizes="(max-width: 700px) 100vw, 33vw" /></div><p>{entry.category} · 0{index + 1}</p><h3>{entry.title}</h3><span>Read the story →</span></Link>)}</div></section>
 
-      <section className="home-cta"><Image src="/images/dining-walnut.jpg" alt="Warm dining room prepared for gathering" fill sizes="100vw" /><div /><article><p className="eyebrow">Begin Your Home</p><h2>Let’s create something<br /><em>beautiful together.</em></h2><p>Your home deserves a thoughtful beginning. Tell us what you are imagining.</p><Link className="button button-light" href="/contact">Start a Conversation</Link></article></section>
+      <section className="home-cta"><Image src="/images/home-cta-v2.webp" alt="Candlelit dining room prepared for a gracious evening gathering" fill loading="eager" sizes="100vw" /><div /><article><p className="eyebrow">Begin Your Home</p><h2>Let’s create something<br /><em>beautiful together.</em></h2><p>Your home deserves a thoughtful beginning. Tell us what you are imagining.</p><Link className="button button-light" href="/contact">Start a Conversation</Link></article></section>
     </>
   );
 }

@@ -26,3 +26,18 @@ Interior and object photography is downloaded locally from Pexels. Pexels identi
 | `rug-woven.jpg` | [Textured Rug and Throw — photo 15221741](https://www.pexels.com/photo/carpet-15221741/) |
 
 `og.png` is an original AI-generated social sharing card created specifically for this site. It is not presented as a photographed client project and is used only in link-preview metadata.
+
+## Original art-directed imagery
+
+The following images were generated specifically for this project and compressed to WebP for production delivery. The product images share one coordinated limewash studio, daylight direction, and neutral material palette so the storefront reads as a single collection rather than a set of unrelated room photographs.
+
+| Local file | Use |
+| --- | --- |
+| `home-hero-v2.webp` | Homepage hero interior |
+| `home-cta-v2.webp` | Homepage consultation call-to-action |
+| `beaufort-sofa-v2.webp` | Beaufort Linen Sofa product image |
+| `harbour-chair-v2.webp` | Harbour Club Chair product image |
+| `calhoun-table-v2.webp` | Calhoun Dining Table product image |
+| `ellis-coffee-table-v2.webp` | Ellis Round Coffee Table product image |
+| `magnolia-bed-v2.webp` | Magnolia Upholstered Bed product image |
+| `heirloom-rug-v2.webp` | Heirloom Wool Rug product image |

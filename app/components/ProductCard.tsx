@@ -11,7 +11,7 @@ export function ProductCard({ product, priority = false }: { product: Product; p
         <span className="product-view">View piece</span>
       </Link>
       <div className="product-meta">
-        <div><Link href={`/products/${product.slug}`}>{product.name}</Link><p>{product.subtitle}</p></div>
+        <div><small>{product.category}</small><Link href={`/products/${product.slug}`}>{product.name}</Link><p>{product.subtitle}</p></div>
         <span>${(product.price / 100).toLocaleString()}</span>
       </div>
     </article>
