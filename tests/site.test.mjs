@@ -29,3 +29,13 @@ test("sitemap includes collection pages and uses stable content dates", async ()
   assert.match(sitemap, /new Date\(entry\.date\)/);
   assert.doesNotMatch(sitemap, /lastModified: new Date\(\)/);
 });
+
+test("production image delivery stays within the Render memory budget", async () => {
+  const [nextConfig, renderConfig] = await Promise.all([
+    readFile(new URL("next.config.ts", root), "utf8"),
+    readFile(new URL("render.yaml", root), "utf8"),
+  ]);
+  assert.match(nextConfig, /unoptimized: true/);
+  assert.doesNotMatch(nextConfig, /image\/avif/);
+  assert.match(renderConfig, /--max-old-space-size=256/);
+});

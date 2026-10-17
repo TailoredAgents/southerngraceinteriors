@@ -29,6 +29,8 @@ The Blueprint sets `SITE_URL` to the temporary Render domain and keeps `SITE_IND
 
 The start script binds to `0.0.0.0` and Next.js automatically uses Render's `PORT`. The first request on Render's free service tier may be slower after the service has slept. Use a paid Render web service before a public launch to remove free-tier spin-down.
 
+The checked-in image library is served directly because the files are already web-optimized. This prevents memory-heavy, on-demand image transcoding on the 512 MB service. `NODE_OPTIONS` also caps the JavaScript heap so native server work always retains memory headroom.
+
 ## Before a public launch
 
 The current site intentionally sends `noindex, nofollow` directives. Keep them until the official business identity, domain, products, policies, service area, and integrations are confirmed. At launch, set `SITE_URL` to the final domain and `SITE_INDEXABLE=true`, then redeploy. Product checkout and message delivery remain intentionally inactive until the appropriate live services are connected.

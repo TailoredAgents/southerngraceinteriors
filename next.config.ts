@@ -3,8 +3,10 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   poweredByHeader: false,
   images: {
-    formats: ["image/avif", "image/webp"],
-    minimumCacheTTL: 31_536_000,
+    // The image library is already compressed for the web. Serving these files
+    // directly avoids memory-heavy, on-demand AVIF/WebP encoding on Render's
+    // 512 MB instance while preserving lazy loading and layout stability.
+    unoptimized: true,
   },
 };
 

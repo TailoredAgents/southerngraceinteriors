@@ -15,3 +15,5 @@ services:
         value: "false"
       - key: NEXT_TELEMETRY_DISABLED
         value: "1"
+      - key: NODE_OPTIONS
+        value: --max-old-space-size=256
