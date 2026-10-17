@@ -1,5 +1,5 @@
-import type { Metadata } from "next";
 import Image from "next/image";
 import { InquiryForm } from "./InquiryForm";
-export const metadata: Metadata = { title: "Begin a Design Project", description: "Tell Southern Grace Interiors about your home and the project you are imagining." };
+import { createMetadata } from "@/app/lib/seo";
+export const metadata = createMetadata({ title: "Begin a Design Project", description: "Tell Southern Grace Interiors about your home and the project you are imagining.", path: "/contact", image: "/images/quiet-corner.jpg", imageAlt: "Quiet interior with soft natural light" });
 export default function ContactPage() { return <div className="contact-page"><section className="contact-intro"><div><p className="eyebrow">Begin a Project</p><h1>Tell us about<br /><em>your home.</em></h1><p>Every thoughtful interior begins with listening. Share what you are imagining, and what you hope home can feel like.</p><div className="contact-details"><span>For design inquiries</span><p>Use the form to share your project details.</p><span>For furnishing questions</span><p>Include the piece name and finish you are considering.</p></div></div><div><Image src="/images/quiet-corner.jpg" alt="Quiet interior with soft light" fill priority sizes="(max-width: 850px) 100vw, 42vw" /></div></section><section className="form-section section-shell"><div><p className="eyebrow">Project Details</p><h2>Let’s begin with<br /><em>the essentials.</em></h2><p>A few thoughtful details help shape the first conversation.</p></div><InquiryForm /></section></div>; }

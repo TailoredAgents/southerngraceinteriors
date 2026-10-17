@@ -1,10 +1,10 @@
-import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { collections, products } from "@/app/data/site";
 import { ShopCatalog } from "@/app/components/ShopCatalog";
+import { createMetadata } from "@/app/lib/seo";
 
-export const metadata: Metadata = { title: "Shop Timeless Furniture & Decor", description: "Explore a considered collection of furniture, lighting, textiles, art, and finishing touches." };
+export const metadata = createMetadata({ title: "Shop Timeless Furniture & Decor", description: "Explore a considered collection of furniture, lighting, textiles, art, and finishing touches.", path: "/shop", image: "/images/room-living-v2.webp", imageAlt: "Layered neutral furnishings in a warm living room" });
 
 export default function ShopPage() {
   return <>

@@ -4,10 +4,17 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { productBySlug, products } from "@/app/data/site";
 import { AddToCart } from "@/app/components/AddToCart";
+import { JsonLd } from "@/app/components/JsonLd";
 import { ProductCard } from "@/app/components/ProductCard";
+import { absoluteUrl, breadcrumbSchema, createMetadata, siteName } from "@/app/lib/seo";
 
 export function generateStaticParams() { return products.map((product) => ({ slug: product.slug })); }
-export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> { const { slug } = await params; const product = productBySlug(slug); return { title: product?.name ?? "Product", description: product?.description }; }
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const product = productBySlug(slug);
+  if (!product) return createMetadata({ title: "Product", description: "Explore the Southern Grace Interiors collection.", path: `/products/${slug}`, noIndex: true });
+  return createMetadata({ title: product.name, description: product.description, path: `/products/${product.slug}`, image: product.images[0], imageAlt: product.name });
+}
 
 export default async function ProductPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
@@ -15,6 +22,25 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
   if (!product) notFound();
   const related = product.related.map((id) => products.find((item) => item.id === id)).filter((item) => item !== undefined);
   return <>
+    <JsonLd data={[
+      {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        name: product.name,
+        description: product.description,
+        image: product.images.map(absoluteUrl),
+        sku: product.id,
+        category: product.category,
+        material: product.materials,
+        brand: { "@type": "Brand", name: siteName },
+      },
+      breadcrumbSchema([
+        { name: "Home", path: "/" },
+        { name: "Shop", path: "/shop" },
+        { name: product.collection.replace("-", " "), path: `/shop/${product.collection}` },
+        { name: product.name, path: `/products/${product.slug}` },
+      ]),
+    ]} />
     <div className="product-page section-shell">
       <nav className="breadcrumbs" aria-label="Breadcrumb"><Link href="/shop">Shop</Link><span>/</span><Link href={`/shop/${product.collection}`}>{product.collection.replace("-", " ")}</Link><span>/</span><span>{product.name}</span></nav>
       <div className="product-layout">

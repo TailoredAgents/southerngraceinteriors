@@ -1,9 +1,9 @@
-import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { services } from "@/app/data/site";
+import { createMetadata } from "@/app/lib/seo";
 
-export const metadata: Metadata = { title: "Interior Design Services", description: "Thoughtful interior design services shaped around how you live and what you love." };
+export const metadata = createMetadata({ title: "Interior Design Services", description: "Thoughtful interior design services shaped around how you live and what you love.", path: "/design-services", image: "/images/path-studio-v2.webp", imageAlt: "Warm architectural dining room with tailored furnishings" });
 
 export default function DesignServicesPage() {
   return <>

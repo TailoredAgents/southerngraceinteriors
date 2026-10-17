@@ -1,3 +1,3 @@
-import type { Metadata } from "next";
-export const metadata: Metadata = { title: "Privacy & Terms" };
+import { createMetadata } from "@/app/lib/seo";
+export const metadata = createMetadata({ title: "Privacy & Terms", description: "Privacy, purchasing, and website content terms for Southern Grace Interiors.", path: "/policies/privacy-terms" });
 export default function PrivacyPage() { return <section className="policy-page section-shell"><p className="eyebrow">Site Information</p><h1>Privacy & Terms</h1><div><h2>Privacy</h2><p>This website does not currently transmit inquiry, newsletter, payment, or order information to a remote service. The shopping cart is stored only in your browser so selections remain available between visits.</p><h2>Purchases</h2><p>Online checkout is not active. Product descriptions, availability, pricing, delivery terms, and final policies will be confirmed before purchases are accepted.</p><h2>Website Content</h2><p>Inspiration studies communicate a visual direction and are not represented as completed client projects. Furnishing information may evolve as the collection is prepared for sale.</p></div></section>; }

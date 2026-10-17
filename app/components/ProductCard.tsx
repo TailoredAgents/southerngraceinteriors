@@ -6,7 +6,7 @@ export function ProductCard({ product, priority = false }: { product: Product; p
   return (
     <article className="product-card">
       <Link href={`/products/${product.slug}`} className="product-image-wrap">
-        <Image src={product.images[0]} alt={product.name} fill sizes="(max-width: 700px) 50vw, (max-width: 1100px) 33vw, 25vw" priority={priority} />
+        <Image src={product.images[0]} alt={product.name} fill sizes="(max-width: 700px) 50vw, (max-width: 1100px) 33vw, 32vw" priority={priority} />
         {product.newArrival && <span className="product-flag">New Arrival</span>}
         <span className="product-view">View piece</span>
       </Link>
