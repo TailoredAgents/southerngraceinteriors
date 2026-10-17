@@ -40,3 +40,10 @@ test("production image delivery stays within the Render memory budget", async ()
   assert.match(nextConfig, /max-age=604800/);
   assert.match(renderConfig, /--max-old-space-size=256/);
 });
+
+test("mobile layout contains page overflow while preserving horizontal galleries", async () => {
+  const css = await readFile(new URL("app/globals.css", root), "utf8");
+  assert.match(css, /html,body\{max-width:100%;overflow-x:hidden\}/);
+  assert.match(css, /@supports \(overflow:clip\)\{html,body\{overflow-x:clip\}\}/);
+  assert.match(css, /\.room-strip,\.project-mosaic,\.project-gallery,\.collection-nav\{overscroll-behavior-inline:contain/);
+});
