@@ -1,6 +1,8 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { Fragment, useMemo, useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
 import type { Product } from "@/app/types/domain";
 import { ProductCard } from "./ProductCard";
 
@@ -32,7 +34,7 @@ export function ShopCatalog({ products, initialCollection }: { products: Product
         </div>
       </div>
       <div className="catalog-count"><span>{visible.length} pieces</span><i /></div>
-      {visible.length ? <div className="product-grid catalog-grid">{visible.map((product, index) => <ProductCard product={product} key={product.id} priority={index < 4} />)}</div> : <div className="catalog-empty"><h2>Nothing quite matches.</h2><p>Try widening your search or clearing a filter.</p><button className="text-link" onClick={() => { setQuery(""); setCategory("all"); setPrice("all"); }}>Clear filters <span>→</span></button></div>}
+      {visible.length ? <div className="product-grid catalog-grid">{visible.map((product, index) => <Fragment key={product.id}><ProductCard product={product} priority={index < 3} />{index === 8 && visible.length > 12 && <aside className="catalog-editorial"><div><Image src="/images/reading-room-v2.webp" alt="A quiet reading room layered in warm natural materials" fill sizes="(max-width: 800px) 100vw, 52vw" /></div><article><p className="eyebrow">The Southern Grace Edit</p><h2>Made to be<br /><em>lived with.</em></h2><p>Begin with pieces that carry the room, then layer in texture, light, and objects with a little soul.</p><Link className="text-link light" href="/journal/rooms-that-feel-collected">Our guide to a collected room <span>→</span></Link></article></aside>}</Fragment>)}</div> : <div className="catalog-empty"><h2>Nothing quite matches.</h2><p>Try widening your search or clearing a filter.</p><button className="text-link" onClick={() => { setQuery(""); setCategory("all"); setPrice("all"); }}>Clear filters <span>→</span></button></div>}
     </div>
   );
 }

@@ -53,3 +53,22 @@ The following images were generated specifically for this project and compressed
 | `room-bedroom-v2.webp` | Bedroom collection cover |
 | `room-lighting-v2.webp` | Lighting collection cover |
 | `room-finishing-v2.webp` | Finishing Touches collection cover |
+| `ashby-chair-v2.webp` | Ashby Cane Chair product image |
+| `savannah-chair-v2.webp` | Savannah Dining Chair product image |
+| `charleston-sideboard-v2.webp` | Charleston Sideboard product image |
+| `camellia-nightstand-v2.webp` | Camellia Nightstand product image |
+| `mercer-pendant-v2.webp` | Mercer Pendant product image |
+| `alden-lamp-v2.webp` | Alden Table Lamp product image |
+| `briar-floor-lamp-v2.webp` | Briar Floor Lamp product image |
+| `addison-bowl-v2.webp` | Addison Stone Bowl product image |
+| `garden-cushion-v2.webp` | Garden Gate Cushion product image |
+| `palmetto-throw-v2.webp` | Palmetto Linen Throw product image |
+| `river-vase-v2.webp` | River Reed Vase product image |
+| `gathering-candleholders-v2.webp` | Gathering Candleholders product image |
+| `lowcountry-art-v2.webp` | Lowcountry Landscape product image |
+| `wren-mirror-v2.webp` | Wren Arched Mirror product image |
+| `veranda-console-v2.webp` | Veranda Console product image |
+| `portfolio-garden-v2.webp` | Garden Room inspiration study |
+| `portfolio-retreat-v2.webp` | Quiet Retreat inspiration study |
+| `portfolio-table-v2.webp` | Gracious Table inspiration study |
+| `journal-entry-v2.webp` | Journal cover: gracious entry |
