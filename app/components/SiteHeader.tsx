@@ -72,7 +72,7 @@ export function SiteHeader() {
         <label className="search-field">
           <span className="sr-only">Search products</span>
           <input autoFocus={searchOpen} value={query} onChange={(event) => setQuery(event.target.value)} placeholder="What are you looking for?" />
-          <span aria-hidden="true">↗</span>
+          <span aria-hidden="true">→</span>
         </label>
         <div className="search-results">
           <p>{query ? `${results.length} pieces found` : "A few favorites"}</p>

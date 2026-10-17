@@ -9,7 +9,7 @@ export const metadata: Metadata = { title: "Shop Timeless Furniture & Decor", de
 export default function ShopPage() {
   return <>
     <section className="page-hero shop-hero"><Image src="/images/living-soft.jpg" alt="Layered neutral furnishings in a warm living room" fill priority sizes="100vw" /><div /><article><p className="eyebrow">The Collection</p><h1>Objects of<br /><em>lasting beauty.</em></h1><p>Furnishings with graceful proportions, natural texture, and an easy sense of permanence.</p></article></section>
-    <nav className="collection-nav section-shell" aria-label="Shop by collection">{collections.map((collection) => <Link href={`/shop/${collection.slug}`} key={collection.slug}>{collection.name}<span>↗</span></Link>)}</nav>
+    <nav className="collection-nav section-shell" aria-label="Shop by collection">{collections.map((collection) => <Link href={`/shop/${collection.slug}`} key={collection.slug}>{collection.name}<span>View</span></Link>)}</nav>
     <ShopCatalog products={products} />
   </>;
 }

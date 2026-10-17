@@ -41,3 +41,15 @@ The following images were generated specifically for this project and compressed
 | `ellis-coffee-table-v2.webp` | Ellis Round Coffee Table product image |
 | `magnolia-bed-v2.webp` | Magnolia Upholstered Bed product image |
 | `heirloom-rug-v2.webp` | Heirloom Wool Rug product image |
+| `path-shop-v2.webp` | Homepage shop gateway |
+| `path-studio-v2.webp` | Homepage design-studio gateway |
+| `services-editorial-v2.webp` | Homepage design-services feature |
+| `reading-room-v2.webp` | Homepage reading-room feature |
+| `journal-collected-v2.webp` | Journal cover: collected rooms |
+| `journal-white-v2.webp` | Journal cover: choosing warm whites |
+| `journal-lighting-v2.webp` | Journal cover: layered lighting |
+| `room-living-v2.webp` | Living collection cover |
+| `room-dining-v2.webp` | Dining collection cover |
+| `room-bedroom-v2.webp` | Bedroom collection cover |
+| `room-lighting-v2.webp` | Lighting collection cover |
+| `room-finishing-v2.webp` | Finishing Touches collection cover |
